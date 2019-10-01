@@ -16,13 +16,13 @@ afterAll(() => {
   mongoose.connection.close();
 });
 
-test('there is one blog', async () => {
+test('there is no blog', async () => {
   const response = await api.get('/api/blogs');
 
-  expect(response.body.length).toBe(1);
+  expect(response.body.length).toBe(0);
 });
 
-test('the first blog is about Alain', async () => {
+xtest('the first blog is about Alain', async () => {
   const response = await api.get('/api/blogs');
 
   expect(response.body[0].author).toBe('Alain');
