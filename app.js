@@ -17,7 +17,7 @@ mongoose
     console.log('connected to MongoDB');
   })
   // eslint-disable-next-line arrow-parens
-  .catch(error => {
+  .catch((error) => {
     console.log('error connection to MongoDB', error.message);
   });
 
