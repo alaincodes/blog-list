@@ -10,36 +10,36 @@ const dummy = (blogs) => 1;
 
 // eslint-disable-next-line arrow-body-style
 const totalLikes = (blogs) => {
-	return blogs.length === 0
-		? 0
-		: blogs.map((blog) => blog.likes).reduce((acc, curr) => acc + curr, 0);
+  return blogs.length === 0
+    ? 0
+    : blogs.map((blog) => blog.likes).reduce((acc, curr) => acc + curr, 0);
 };
 
 const favoriteBlog = (blogs) => {
-	let likes = 0;
-	let mostLikes = {};
+  let likes = 0;
+  let mostLikes = {};
 
-	blogs.forEach((blog) => {
-		if (blog.likes > likes) {
-			likes = blog.likes;
-			mostLikes = blog;
-		}
-	});
+  blogs.forEach((blog) => {
+    if (blog.likes > likes) {
+      likes = blog.likes;
+      mostLikes = blog;
+    }
+  });
 
-	return {
-		title: mostLikes.title,
-		author: mostLikes.author,
-		likes: mostLikes.likes,
-	};
+  return {
+    title: mostLikes.title,
+    author: mostLikes.author,
+    likes: mostLikes.likes,
+  };
 };
 
 const mostBlogs = (blogs) => {
-	_.sortBy(blogs, ['author', 'likes']);
+  _.sortBy(blogs, ['author', 'likes']);
 };
 
 module.exports = {
-	dummy,
-	totalLikes,
-	favoriteBlog,
-	mostBlogs,
+  dummy,
+  totalLikes,
+  favoriteBlog,
+  mostBlogs,
 };
